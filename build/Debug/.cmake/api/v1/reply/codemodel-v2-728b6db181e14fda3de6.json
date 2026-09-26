@@ -60,14 +60,14 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "STM32_Drivers::@768a070a0fe75716b479",
-					"jsonFile" : "target-STM32_Drivers-Debug-c1e7a83117a157825c99.json",
+					"jsonFile" : "target-STM32_Drivers-Debug-3000e8264df979a8a679.json",
 					"name" : "STM32_Drivers",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "SYSTEMF4::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SYSTEMF4-Debug-28fb205ee90d73fca22b.json",
+					"jsonFile" : "target-SYSTEMF4-Debug-ddcada3869cf00672e48.json",
 					"name" : "SYSTEMF4",
 					"projectIndex" : 0
 				}

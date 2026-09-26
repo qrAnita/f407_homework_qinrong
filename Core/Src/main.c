@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "can.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -68,8 +69,6 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
-
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -91,39 +90,92 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM9_Init();
   MX_USART1_UART_Init();
+  MX_CAN1_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t receiveData[2];
- 
+   // main.c
+  /* USER CODE BEGIN 2 */
+  CAN_TxHeaderTypeDef txHeader = {0};
+  txHeader.StdId = 0x713;// TODO 对吗
+  txHeader.ExtId = 0;// TODO对吗
+  txHeader.IDE = CAN_ID_EXT;// TODO 不对吧 
+  txHeader.RTR = CAN_RTR_REMOTE;//TODO 要改吗
+  txHeader.DLC = 6;// TODO 要改吗
+  txHeader.TransmitGlobalTime = DISABLE;
 
+
+/* USER CODE BEGIN 4 */
+ 
+    /* USER CODE BEGIN 3 */
+  
+
+  /* 0x201 M2006 current, big-endian int16, range typically [-10000, 10000] */
+  uint8_t txData[8] = {};// TODO 构造控制电机的CAN帧。建议电流值：1000
+  uint32_t txMailbox;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
- while (1)
+  while (1)
   {
-    HAL_UART_Receive(&huart1, receiveData, 2, HAL_MAX_DELAY);
-    HAL_UART_Transmit(&huart1,receiveData, 2, 100);
-    HAL_Delay(1000);
-    GPIO_PinState state = GPIO_PIN_SET;
-    if (receiveData[1] == '0') {
-        state = GPIO_PIN_RESET;
-    }
-    if (receiveData[0] == 'R') {
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, state);
-    } else if (receiveData[0] == 'G') {
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_6, state);
-    }
-  
+      (void)HAL_CAN_AddTxMessage(&hcan1, &txHeader, txData, &txMailbox);
+
+    HAL_Delay(500); // TODO 电机的控制频率建议100hz
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+  }
+
+ 
+  // Process the received message (rx_header and rx_data)
 }
-    /* USER CODE END WHILE */
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+
+
+
+/* USER CODE BEGIN 4 */
+ 
+    /* USER CODE BEGIN 3 */
+  
+
+ 
 
     /* USER CODE BEGIN 3 */
+  
+
+  /* 0x201 M2006 current, big-endian int16, range typically [-10000, 10000] */
+ 
+    /* USER CODE BEGIN 3 */
+  
+
+ 
+  // Process the received message (rx_header and rx_data)
+
+/* USER CODE END 1 */
+
+  /* USER CODE END CAN1_Init 2 */
+
+
+/* USER CODE BEGIN 1 */
 
   /* USER CODE END 3 */
-}
+
 
 /**
   * @brief System Clock Configuration
@@ -171,6 +223,25 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+ 
+    /* USER CODE BEGIN 3 */
+  
+
+  /* 0x201 M2006 current, big-endian int16, range typically [-10000, 10000] */
+  
+  /* USER CODE END CAN1_Init 2 */
+
+
+
+
+/* USER CODE BEGIN 1 */
+
+  /* USER CODE END 3 */
+  /* USER CODE END 3 */
+
+
+
+
 
 /* USER CODE END 4 */
 
@@ -181,7 +252,7 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
+ /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
   {
