@@ -1,0 +1,3 @@
+D:/pnx/C_broad2/Core/Src/stm32f4xx_hal_timebase_tim.c:41:19:HAL_InitTick	64	static
+D:/pnx/C_broad2/Core/Src/stm32f4xx_hal_timebase_tim.c:121:6:HAL_SuspendTick	4	static
+D:/pnx/C_broad2/Core/Src/stm32f4xx_hal_timebase_tim.c:133:6:HAL_ResumeTick	4	static
