@@ -1,4 +1,4 @@
-D:/pnx/C_broad2/Core/Src/i2c.c:31:6:MX_I2C2_Init	8	static
-D:/pnx/C_broad2/Core/Src/i2c.c:60:6:MX_I2C3_Init	8	static
-D:/pnx/C_broad2/Core/Src/i2c.c:89:6:HAL_I2C_MspInit	56	static
-D:/pnx/C_broad2/Core/Src/i2c.c:151:6:HAL_I2C_MspDeInit	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/Core/Src/i2c.c:31:6:MX_I2C2_Init	8	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/Core/Src/i2c.c:60:6:MX_I2C3_Init	8	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/Core/Src/i2c.c:89:6:HAL_I2C_MspInit	56	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/Core/Src/i2c.c:151:6:HAL_I2C_MspDeInit	16	static

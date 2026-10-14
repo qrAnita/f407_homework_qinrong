@@ -179,7 +179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/pnx/C_broad2/build/Debug"
+			"value" : "c:/Users/RR/Desktop/rm27_training_framework_hw/build/Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/pnx/C_broad2/build/Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/RR/Desktop/rm27_training_framework_hw/build/Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -707,7 +707,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/pnx/C_broad2"
+			"value" : "C:/Users/RR/Desktop/rm27_training_framework_hw"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1183,11 +1183,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "D:/pnx/C_broad2/cmake/gcc-arm-none-eabi.cmake"
+			"type" : "UNINITIALIZED",
+			"value" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/gcc-arm-none-eabi.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1215,7 +1215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/pnx/C_broad2/build/Debug"
+			"value" : "C:/Users/RR/Desktop/rm27_training_framework_hw/build/Debug"
 		},
 		{
 			"name" : "C_broad2_IS_TOP_LEVEL",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/pnx/C_broad2"
+			"value" : "C:/Users/RR/Desktop/rm27_training_framework_hw"
 		}
 	],
 	"kind" : "cache",

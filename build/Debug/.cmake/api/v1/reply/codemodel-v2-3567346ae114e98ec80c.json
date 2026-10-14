@@ -62,21 +62,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "C_broad2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-C_broad2-Debug-8e860d7b270f67b75c01.json",
+					"jsonFile" : "target-C_broad2-Debug-2c4cbc76f6bcb2a2abc7.json",
 					"name" : "C_broad2",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "STM32_Drivers::@768a070a0fe75716b479",
-					"jsonFile" : "target-STM32_Drivers-Debug-0d8e87b5e02541c5a99c.json",
+					"jsonFile" : "target-STM32_Drivers-Debug-b91192cb9360773d8196.json",
 					"name" : "STM32_Drivers",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "ThreadX::@768a070a0fe75716b479",
-					"jsonFile" : "target-ThreadX-Debug-2abb10bc4b44594ed66d.json",
+					"jsonFile" : "target-ThreadX-Debug-6a42d7a98296bf2bb228.json",
 					"name" : "ThreadX",
 					"projectIndex" : 0
 				}
@@ -86,8 +86,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/pnx/C_broad2/build/Debug",
-		"source" : "D:/pnx/C_broad2"
+		"build" : "C:/Users/RR/Desktop/rm27_training_framework_hw/build/Debug",
+		"source" : "C:/Users/RR/Desktop/rm27_training_framework_hw"
 	},
 	"version" : 
 	{

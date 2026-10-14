@@ -94,7 +94,7 @@ rule C_COMPILER__ThreadX_unscanned_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = D:\pnx\pnx\cmake\cmake-3.31.12-windows-x86_64\cmake-3.31.12-windows-x86_64\bin\cmake.exe --regenerate-during-build -SD:\pnx\C_broad2 -BD:\pnx\C_broad2\build\Debug
+  command = D:\pnx\pnx\cmake\cmake-3.31.12-windows-x86_64\cmake-3.31.12-windows-x86_64\bin\cmake.exe --regenerate-during-build -SC:\Users\RR\Desktop\rm27_training_framework_hw -BC:\Users\RR\Desktop\rm27_training_framework_hw\build\Debug
   description = Re-running CMake...
   generator = 1
 

@@ -535,7 +535,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -fdata-sections -ffunction-sections -fstack-usage -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -x assembler-with-cpp -MMD -MP -g"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -x assembler-with-cpp -MMD -MP -g"
 				}
 			],
 			"defines" : 
@@ -561,35 +561,35 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../AZURE_RTOS/App"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../AZURE_RTOS/App"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Middlewares/ST/threadx/common/inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Middlewares/ST/threadx/common/inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc"
 				}
 			],
 			"language" : "ASM",
@@ -608,7 +608,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -fdata-sections -ffunction-sections -fstack-usage -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -fdata-sections -ffunction-sections -fstack-usage -O0 -g3 -std=gnu11"
+					"fragment" : " -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -fdata-sections -ffunction-sections -fstack-usage -O0 -g3 -std=gnu11"
 				}
 			],
 			"defines" : 
@@ -634,35 +634,35 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../AZURE_RTOS/App"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../AZURE_RTOS/App"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Middlewares/ST/threadx/common/inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Middlewares/ST/threadx/common/inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/pnx/C_broad2/cmake/stm32cubemx/../../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc"
+					"path" : "C:/Users/RR/Desktop/rm27_training_framework_hw/cmake/stm32cubemx/../../Middlewares/ST/threadx/ports/cortex_m4/gnu/inc"
 				}
 			],
 			"language" : "C",
