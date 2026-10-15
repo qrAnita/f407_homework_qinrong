@@ -4,7 +4,7 @@
 #include "IMU.hpp"
 #include "spi.h"
 #include "gpio.h"
-
+extern TIM_HandleTypeDef htim10;
 namespace BMI088
 {
 /**
@@ -26,6 +26,7 @@ enum BMI088_SENSOR
 #define BMI088_ACC_CS_GPIO_Port GPIOA
 #define BMI088_ACC_CS_Pin GPIO_PIN_4
 #define BMI088_GYRO_CS_GPIO_Port GPIOB
+
 #define BMI088_GYRO_CS_Pin GPIO_PIN_0            ///< 陀螺仪片选引脚
 #define HEATING_RESISTANCE_TIM htim10            //< 加热电阻定时器
 #define HEATING_RESISTANCE_CHANNEL TIM_CHANNEL_1 //< 加热电阻通道

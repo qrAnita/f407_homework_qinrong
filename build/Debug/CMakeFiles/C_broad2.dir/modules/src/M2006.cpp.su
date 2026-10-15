@@ -1,0 +1,8 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotor.hpp:91:5:DJIMotor::DJIMotor()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotor.hpp:86:13:DJIMotor::~DJIMotor()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotor.hpp:86:13:virtual DJIMotor::~DJIMotor()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/M2006.cpp:14:1:M2006::M2006()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/M2006.cpp:34:6:virtual void M2006::setOutput()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/M2006.cpp:74:26:virtual DJIMotor::MotorStateTypedef M2006::AliveCheck()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/M2006.hpp:27:5:M2006::~M2006()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/M2006.hpp:27:5:virtual M2006::~M2006()	16	static

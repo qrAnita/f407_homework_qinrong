@@ -1,0 +1,5 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/bsp/src/bsp_usart.cpp:3:6:void USART_Init()	8	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/bsp/src/bsp_usart.cpp:9:6:void USART6_Init()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/bsp/src/bsp_usart.cpp:20:6:void USART1_Init()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/bsp/src/bsp_usart.cpp:32:6:void USART_Transmit(UART_HandleTypeDef*, uint8_t*, uint16_t, USART_Mode)	24	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/bsp/src/bsp_usart.cpp:62:6:void USART_Receive(UART_HandleTypeDef*, uint8_t*, uint16_t)	24	static

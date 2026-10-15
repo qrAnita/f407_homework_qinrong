@@ -3,6 +3,7 @@
 //
 
 #include "bsp_pwm.hpp"
+TIM_HandleTypeDef htim10 = {0};
 static uint32_t PWM_GetTimerClock(TIM_TypeDef *TIMx)
 {
   uint32_t pclk1 = HAL_RCC_GetPCLK1Freq();

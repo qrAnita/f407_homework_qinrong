@@ -1,0 +1,8 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotorHandler.hpp:54:29:static DJIMotorHandler* DJIMotorHandler::Instance()	4	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/controlthread.cpp:13:6:void control_thread_entry(ULONG)	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotor.hpp:86:13:DJIMotor::~DJIMotor()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotor.hpp:86:13:virtual DJIMotor::~DJIMotor()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/M2006.hpp:27:5:M2006::~M2006()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/M2006.hpp:27:5:virtual M2006::~M2006()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/controlthread.cpp:30:1:void __static_initialization_and_destruction_0()	8	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/controlthread.cpp:30:1:cpp)	8	static

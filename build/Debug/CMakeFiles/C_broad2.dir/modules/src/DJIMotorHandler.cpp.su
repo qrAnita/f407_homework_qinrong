@@ -1,0 +1,7 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/DJIMotorHandler.hpp:54:29:static DJIMotorHandler* DJIMotorHandler::Instance()	4	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/DJIMotorHandler.cpp:12:6:void CAN_Rx_Callback(CAN_HandleTypeDef*, CAN_RxHeaderTypeDef*, uint8_t*)	24	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/DJIMotorHandler.cpp:20:6:void DJIMotorHandler::registerMotor(DJIMotor*, CAN_HandleTypeDef*, uint16_t)	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/DJIMotorHandler.cpp:59:6:void DJIMotorHandler::sendControlData()	56	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/DJIMotorHandler.cpp:102:6:void DJIMotorHandler::updateFeedback(CAN_HandleTypeDef*, uint8_t*, int)	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/DJIMotorHandler.cpp:120:6:void DJIMotorHandler::UpdateSensorData(DJIMotor*, uint8_t*)	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/DJIMotorHandler.cpp:152:6:void DJIMotorHandler::AllMotorAliveCheck()	24	static

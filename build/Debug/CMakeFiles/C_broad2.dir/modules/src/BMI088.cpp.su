@@ -1,0 +1,18 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:8:24:void BMI088::CS_Low(BMI088_SENSOR)	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:16:24:void BMI088::CS_High(BMI088_SENSOR)	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:34:10:virtual void BMI088::cBMI088::Calibrate()	48	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:76:10:virtual void BMI088::cBMI088::TemperatureControl(float)	24	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:96:10:virtual void BMI088::cBMI088::VerifyAccChipID()	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:114:10:virtual void BMI088::cBMI088::VerifyGyroChipID()	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:131:10:virtual void BMI088::cBMI088::VerifyAccData()	40	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:149:10:virtual void BMI088::cBMI088::VerifyGyroData()	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:167:10:void BMI088::cBMI088::WriteReg(BMI088::BMI088_SENSOR, uint8_t, uint8_t*, uint8_t)	40	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:191:10:void BMI088::cBMI088::ReadReg(BMI088::BMI088_SENSOR, uint8_t, uint8_t*, uint8_t)	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:209:10:virtual void BMI088::cBMI088::Config()	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:280:10:virtual void BMI088::cBMI088::ReadAccData(acc_data_t*)	40	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:297:10:virtual void BMI088::cBMI088::ReadGyroData(gyro_data_t*)	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/src/BMI088.cpp:314:10:virtual void BMI088::cBMI088::ReadAccTemperature(float*)	32	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/IMU.hpp:65:13:cIMU::~cIMU()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/IMU.hpp:65:13:virtual cIMU::~cIMU()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/BMI088.hpp:184:11:BMI088::cBMI088::~cBMI088()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/BMI088.hpp:184:11:virtual BMI088::cBMI088::~cBMI088()	16	static

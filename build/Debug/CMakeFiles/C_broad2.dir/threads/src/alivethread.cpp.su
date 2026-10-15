@@ -1,0 +1,3 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/alivethread.cpp:30:13:bool thread_alive(TX_SEMAPHORE*)	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/alivethread.cpp:50:13:void alive_thread_entry(ULONG)	24	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/alivethread.cpp:89:17:UINT Threads_Init()	40	static

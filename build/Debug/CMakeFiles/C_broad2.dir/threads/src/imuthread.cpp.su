@@ -1,0 +1,10 @@
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/IMU.hpp:46:16:constexpr imu_error_t::imu_error_t()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/IMU.hpp:57:7:cIMU::cIMU()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/IMU.hpp:65:13:cIMU::~cIMU()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/IMU.hpp:65:13:virtual cIMU::~cIMU()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/BMI088.hpp:184:11:BMI088::cBMI088::cBMI088()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/imuthread.cpp:14:6:void imu_thread_entry(ULONG)	48	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/BMI088.hpp:184:11:BMI088::cBMI088::~cBMI088()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/modules/include/BMI088.hpp:184:11:virtual BMI088::cBMI088::~cBMI088()	16	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/imuthread.cpp:55:1:void __static_initialization_and_destruction_0()	8	static
+C:/Users/RR/Desktop/rm27_training_framework_hw/threads/src/imuthread.cpp:55:1:cpp)	8	static

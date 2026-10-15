@@ -100,6 +100,15 @@ rule RERUN_CMAKE
 
 
 #############################################
+# Rule for re-checking globbed directories.
+
+rule VERIFY_GLOBS
+  command = D:\pnx\pnx\cmake\cmake-3.31.12-windows-x86_64\cmake-3.31.12-windows-x86_64\bin\cmake.exe -P C:\Users\RR\Desktop\rm27_training_framework_hw\build\Debug\CMakeFiles\VerifyGlobs.cmake
+  description = Re-checking globbed directories...
+  generator = 1
+
+
+#############################################
 # Rule for cleaning additional files.
 
 rule CLEAN_ADDITIONAL

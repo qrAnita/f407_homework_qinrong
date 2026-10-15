@@ -48,7 +48,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
-
+extern UINT Threads_Init(void);
 /* USER CODE END PFP */
 
 /**
@@ -63,6 +63,7 @@ UINT App_ThreadX_Init(VOID *memory_ptr)
 
   /* USER CODE BEGIN App_ThreadX_Init */
   (void)byte_pool;
+  Threads_Init();
   /* USER CODE END App_ThreadX_Init */
 
   return ret;

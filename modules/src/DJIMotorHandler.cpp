@@ -78,9 +78,17 @@ void DJIMotorHandler::sendControlData()
             uint8_t offset = (slot % 4) * 2; // 每电机占 2 字节，大端
             int16_t current = motor->currentSet;
 
-            frame[offset] = (uint8_t)((current >> 8) & 0xFF);
-            frame[offset + 1] = (uint8_t)(current & 0xFF);
+            int32_t frame_current = (int32_t)motor->currentSet * (int32_t)DJI_MOTOR_CURRENT_FULL_SCALE
+                                    / (int32_t)(DJI_M2006_MAX_CURRENT_AMP * 1000.0f);
+            if (frame_current > (int32_t)DJI_MOTOR_CURRENT_FULL_SCALE - 1)
+                frame_current = (int32_t)DJI_MOTOR_CURRENT_FULL_SCALE - 1;
+            if (frame_current < -((int32_t)DJI_MOTOR_CURRENT_FULL_SCALE - 1))
+                frame_current = -((int32_t)DJI_MOTOR_CURRENT_FULL_SCALE - 1);
+
+            frame[offset] = (uint8_t)((frame_current >> 8) & 0xFF);
+            frame[offset + 1] = (uint8_t)(frame_current & 0xFF);
         }
+        
 
         if (exist_0x200)
             CAN_Transmit(hcan, 0x200, frame_0x200, 8);
@@ -113,7 +121,7 @@ void DJIMotorHandler::UpdateSensorData(DJIMotor *motor, uint8_t *can_data)
 {
     // TODO: 从 CAN 数据解析编码器、转速、电流和温度。
     // TODO: 处理编码器回绕，并按减速比换算输出轴位置和角速度。
-   motor->motorFeedback.last_ecd = motor->motorFeedback.ecd;
+    motor->motorFeedback.last_ecd = motor->motorFeedback.ecd;
     motor->motorFeedback.lastSpeedFdb = motor->motorFeedback.speedFdb;
     motor->motorFeedback.lastPositionFdb = motor->motorFeedback.positionFdb;
 
