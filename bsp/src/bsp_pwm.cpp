@@ -17,8 +17,7 @@ static uint32_t PWM_GetTimerClock(TIM_TypeDef *TIMx)
 }
 void PWM_Init(void)
 {
-    PWM_Start(&htim1, TIM_CHANNEL_1);
-    PWM_Start(&htim1, TIM_CHANNEL_2);
+    PWM_Start(&htim10, TIM_CHANNEL_1);
     // TODO: 根据实际使用的定时器和通道完成 PWM 初始化。
 }
 
