@@ -5,6 +5,21 @@
 
 namespace BMI088
 {
+    static inline void CS_Low(enum BMI088_SENSOR cs)
+    {
+        if (cs == BMI088_CS_ACC)
+            HAL_GPIO_WritePin(BMI088_ACC_CS_GPIO_Port, BMI088_ACC_CS_Pin, GPIO_PIN_RESET);
+        else
+            HAL_GPIO_WritePin(BMI088_GYRO_CS_GPIO_Port, BMI088_GYRO_CS_Pin, GPIO_PIN_RESET);
+    }
+
+    static inline void CS_High(enum BMI088_SENSOR cs)
+    {
+        if (cs == BMI088_CS_ACC)
+            HAL_GPIO_WritePin(BMI088_ACC_CS_GPIO_Port, BMI088_ACC_CS_Pin, GPIO_PIN_SET);
+        else
+            HAL_GPIO_WritePin(BMI088_GYRO_CS_GPIO_Port, BMI088_GYRO_CS_Pin, GPIO_PIN_SET);
+    }
     /**
      * @brief BMI088 acc gyro 标定
      * @note 标定后的陀螺仪零偏存储在 Gyro_offset 中。
@@ -60,6 +75,18 @@ namespace BMI088
 
     void cBMI088::TemperatureControl(float target_temp)
     {
+        float now_temp = 0.0f;
+        ReadAccTemperature(&now_temp);
+
+        TempPid.ref = target_temp;
+        TempPid.fdb = now_temp;
+        TempPid.UpdateResult();
+
+        float duty = TempPid.result / 25000.0f; // maxOut=25000 对应满占空比
+        if (duty < 0.0f)
+            duty = 0.0f;
+        if (duty > 1.0f)
+            duty = 1.0f;
         // TODO: 温度读取完成后，用 TempPid 计算加热占空比并限制到 [0, 1]。
         // 未完成前保持加热关闭。
         (void)target_temp;
@@ -103,34 +130,81 @@ namespace BMI088
 
     void cBMI088::VerifyAccData()
     {
+        acc_data_t data;
+        ReadAccData(&data);
+
+        float norm = sqrtf(data.x * data.x + data.y * data.y + data.z * data.z);
+        if (norm < 0.5f * BMI088_ACCEL_PRE_CALI_G_NORM || norm > 2.5f * BMI088_ACCEL_PRE_CALI_G_NORM)
+        {
+            self_test.ACC_DATA_ERR = true;
+        }
+        else
+        {
+            self_test.ACC_DATA_ERR = false;
+        }
+    
         // TODO: 检查加速度数据是否有效，并更新 ACC_DATA_ERR。
     }
 
     void cBMI088::VerifyGyroData()
     {
-        // TODO: 检查角速度数据是否有效，并更新 GYRO_DATA_ERR。
+        gyro_data_t data;
+        ReadGyroData(&data);
+
+        const float limit = 35.0f; // 略大于 2000 deg/s ≈ 34.9 rad/s
+        if (fabs(data.x) > limit || fabs(data.y) > limit || fabs(data.z) > limit)
+        {
+            self_test.GYRO_DATA_ERR = true;
+        }
+        else
+        {
+            self_test.GYRO_DATA_ERR = false;
+        }
     }
+        // TODO: 检查角速度数据是否有效，并更新 GYRO_DATA_ERR。
+    
 
     void cBMI088::WriteReg(enum BMI088_SENSOR cs, uint8_t addr, uint8_t *data, uint8_t len)
     {
+         uint8_t tx_buf[8] = {0};
+        if (data == nullptr || len == 0 || len > 7)
+        {
+            return;
+        }
+
+        tx_buf[0] = addr & BMI088_SPI_WRITE_CODE;
+        for (uint8_t i = 0; i < len; i++)
+        {
+            tx_buf[i + 1] = data[i];
+        }
+
+        CS_Low(cs);
+        HAL_SPI_Transmit(&BMI088_SPI_HANDLE, tx_buf, len + 1, 100);
+        CS_High(cs);
+    }
+
         // TODO: 根据 cs 拉低对应 GPIO 片选；按 SPI 写协议发送地址和数据，
         // 最后释放片选，并处理通信失败与必要的延时。
-        (void)cs;
-        (void)addr;
-        (void)data;
-        (void)len;
-    }
+  
+    
 
     void cBMI088::ReadReg(enum BMI088_SENSOR cs, uint8_t addr, uint8_t *data, uint8_t len)
     {
         // TODO: 根据 cs 拉低对应 GPIO 片选；按 SPI 读协议发送地址，
         // 丢弃加速度计返回的首个无效字节，读取 len 字节并释放片选。
         // 未实现前清零缓冲区，避免芯片 ID 校验读取未初始化数据。
-        (void)cs;
-        (void)addr;
-        if (data != nullptr)
-            for (uint8_t i = 0; i < len; ++i) data[i] = 0;
+       uint8_t tx_addr = addr | BMI088_SPI_READ_CODE;
+        if (data == nullptr || len == 0)
+        {
+            return;
+        }
+
+        CS_Low(cs);
+        HAL_SPI_Transmit(&BMI088_SPI_HANDLE, &tx_addr, 1, 100);
+        HAL_SPI_Receive(&BMI088_SPI_HANDLE, data, len, 100);
+        CS_High(cs);
     }
+    
 
     void cBMI088::Config()
     {
@@ -207,20 +281,51 @@ namespace BMI088
     {
         // TODO: 按 BMI088 加速度计 SPI 协议丢弃首个无效字节，拼接三轴有符号原始值，
         // 再按配置的量程换算为 m/s²，写入 data。
-        if (data != nullptr) *data = {};
+        uint8_t buf[ACC_XYZ_LEN + 1] = {0};
+        int16_t raw = 0;
+
+        ReadReg(BMI088_CS_ACC, ACC_X_LSB_ADDR, buf, ACC_XYZ_LEN + 1);
+
+        raw = (int16_t)((buf[1] << 8) | buf[2]);
+        data->x = raw * IMU_ACCEL_6G_SEN; // Config 中配置为 6G 量程
+        raw = (int16_t)((buf[3] << 8) | buf[4]);
+        data->y = raw * IMU_ACCEL_6G_SEN;
+        raw = (int16_t)((buf[5] << 8) | buf[6]);
+        data->z = raw * IMU_ACCEL_6G_SEN;
     }
 
     void cBMI088::ReadGyroData(gyro_data_t *data)
     {
         // TODO: 读取并拼接陀螺仪三轴原始值，按配置量程换算为 rad/s，
         // 减去 Gyro_offset 后写入 data。
-        if (data != nullptr) *data = {};
+         uint8_t buf[GYRO_XYZ_LEN] = {0};
+        int16_t raw = 0;
+
+        ReadReg(BMI088_CS_GYRO, GYRO_RATE_X_LSB_ADDR, buf, GYRO_XYZ_LEN);
+
+        raw = (int16_t)((buf[1] << 8) | buf[0]);
+        data->x = raw * IMU_GYRO_2000_SEN - Gyro_offset[0]; // Config 中配置为 2000 deg/s
+        raw = (int16_t)((buf[3] << 8) | buf[2]);
+        data->y = raw * IMU_GYRO_2000_SEN - Gyro_offset[1];
+        raw = (int16_t)((buf[5] << 8) | buf[4]);
+        data->z = raw * IMU_GYRO_2000_SEN - Gyro_offset[2];
     }
 
     void cBMI088::ReadAccTemperature(float *temp)
     {
         // TODO: 丢弃加速度计读取时的首个无效字节，解析 11 位有符号温度并换算为摄氏度。
-        if (temp != nullptr) *temp = 0.0f;
+        uint8_t buf[TEMP_LEN + 1] = {0};
+        int16_t raw = 0;
+
+        ReadReg(BMI088_CS_ACC, TEMP_MSB_ADDR, buf, TEMP_LEN + 1);
+
+        raw = (int16_t)((buf[1] << 3) | (buf[2] >> 5));
+        if (raw > 1023)
+        {
+            raw -= 2048;
+        }
+
+        *temp = raw * TEMP_UNIT + TEMP_BIAS;
     }
 
 }
